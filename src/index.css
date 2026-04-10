@@ -13,15 +13,40 @@ html{
   direction: rtl;
 
 }
-section{
-  /* background: url(assets/bkg.jpg); */
-  background-position: center;
-  background-size: cover;
+section {
+  position: relative;
   min-height: 100vh;
-  min-width: 100vh;
-  display: block;
+  width: 100%;
+  background: url(assets/bkg.jpg) center/cover no-repeat;
+  background-position: center 20%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+section > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  section {
+    background-position: center;
+    background-attachment: scroll;
+    min-height: 100dvh; /* مهم جدًا للموبايل الحديث */
+  }
+}
+
+
+
 section h1{
   align-items: center;
   font-size: 50px;
@@ -30,8 +55,16 @@ section h1{
   color: #fff;
   
 }
+@media (max-width: 768px) {
+  section h1 {
+    font-size: 32px;
+    padding: 20px;
+    text-align: center;
+  }
+}
 section .container{
-  width: 650px;
+  width: 90%;        /* بدل 650px */
+  max-width: 650px;
   background: #332a224a;
   padding: 30px 25px;
   backdrop-filter: blur(10px);
@@ -67,7 +100,7 @@ h3{
 }
 
 section  .top_sec .date{
-  width: 250px;
+  width: 35%;
 }
 section  .top_sec .date h4{
   font-size: 26px ;
