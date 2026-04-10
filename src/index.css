@@ -14,7 +14,7 @@ html{
 
 }
 section{
-  background: url(assets/bkg.jpg);
+  /* background: url(assets/bkg.jpg); */
   background-position: center;
   background-size: cover;
   min-height: 100vh;
