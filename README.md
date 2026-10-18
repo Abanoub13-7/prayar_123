@@ -23,6 +23,18 @@ npm install
 npm run dev
 ```
 
+## النشر على GitHub Pages
+
+المشروع مُعدّ لاستخدام مسارات نسبية للملفات، حتى تعمل ملفات JavaScript وCSS داخل رابط المستودع على GitHub Pages.
+
+1. ارفع محتويات هذا المجلد إلى المستودع في الفرع `main`.
+2. افتح **Settings → Pages** في المستودع.
+3. من **Build and deployment → Source** اختر **GitHub Actions**.
+4. انتظر انتهاء سير العمل **Deploy Prayar to GitHub Pages** من تبويب **Actions**.
+5. افتح رابط Pages الظاهر في إعدادات المستودع بعد نجاح عمليتي البناء والنشر.
+
+لا ترفع مجلد `src` باعتباره موقعًا ثابتًا مباشرةً؛ يجب أن يبني GitHub Actions المشروع وينشر محتويات `dist`.
+
 ## الاختبارات
 
 ```bash
