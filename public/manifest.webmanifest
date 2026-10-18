@@ -1,0 +1,19 @@
+{
+  "name": "Prayar - مواقيت الصلاة",
+  "short_name": "Prayar",
+  "description": "مواقيت الصلاة والجدول الشهري والتذكيرات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101914",
+  "theme_color": "#101914",
+  "icons": [
+    {
+      "src": "/prayar-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

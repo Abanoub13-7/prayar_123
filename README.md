@@ -1,16 +1,40 @@
-# React + Vite
+# Prayar | مواقيت الصلاة
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+تطبيق ويب عربي لمتابعة مواقيت الصلاة، مبني باستخدام React وVite، ويعتمد على خدمة AlAdhan لجلب المواقيت.
 
-Currently, two official plugins are available:
+## المزايا
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- مواقيت الصلاة اليومية مع تحديد الفترة الحالية والصلاة القادمة.
+- عدّاد تنازلي حي وشريط تقدم حتى الصلاة التالية.
+- اختيار المدينة وطريقة حساب المواقيت وطريقة حساب العصر.
+- جدول شهري قابل للتصفح حسب الشهر.
+- تذكيرات المتصفح قبل الصلاة مع اختيار المدة.
+- الوضع الداكن والفاتح، وحفظ التفضيلات محليًا.
+- مشاركة المواقيت عن طريق نسخها.
+- إعدادات PWA أساسية مع تخزين مؤقت لواجهة الموقع لتسهيل فتحها عند انقطاع الاتصال.
+- واجهة RTL متجاوبة مع الشاشات الصغيرة والكبيرة.
 
-## React Compiler
+## التشغيل محليًا
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+يتطلب Node.js حديثًا (Node 20.19+ أو 22.12+ موصى به مع إصدارات Vite الحالية).
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## الاختبارات
+
+```bash
+npm test
+npm run lint
+npm run build
+```
+
+اختبارات المنطق الأساسية موجودة في `tests/prayerUtils.test.js`، وتشمل تنسيق أوقات API، وحساب الصلاة القادمة، والانتقال بعد العشاء إلى فجر اليوم التالي، وتنسيق العد التنازلي.
+
+## ملاحظات مهمة
+
+- يتطلب تحديث المواقيت والجدول الشهري اتصالًا بالإنترنت.
+- إشعارات المتصفح تعمل عندما يكون الموقع مفتوحًا ويمكن للمتصفح تشغيله؛ الإشعارات الموثوقة أثناء إغلاق الموقع تحتاج إلى بنية Push Notifications وخادم.
+- أوقات الصلاة تعتمد على المدينة وطريقة الحساب المختارة. ينبغي التحقق من المواقيت محليًا قبل الاعتماد عليها في الاستخدام الديني اليومي.
